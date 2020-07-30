@@ -147,7 +147,7 @@ function Get-AzSKLSASScanStatus
          #*****Step 2*****: Check for deleted application objects having access on subscription
         Write-Host $([Constants]::SingleDashLine)
 
-        Write-Host "Service principal(s) without owner(s) having access on subscription:" -ForegroundColor $([Constants]::MessageType.Info)
+        Write-Host "Application(s) without owner(s) having access on subscription:" -ForegroundColor $([Constants]::MessageType.Info)
 
         if(($spnWithoutOwners | Measure-Object).Count -gt 0)
         {
@@ -156,7 +156,7 @@ function Get-AzSKLSASScanStatus
         }
         else
         {
-             Write-Host "No Service principal(s) found without owner(s)" -ForegroundColor $([Constants]::MessageType.Update)
+             Write-Host "No application(s) found without owner(s)" -ForegroundColor $([Constants]::MessageType.Update)
         }
 
         #*******Step 3******* Check for application privileged roles but owner does not have role in subscription
@@ -170,7 +170,7 @@ function Get-AzSKLSASScanStatus
         }
         else
         {
-             Write-Host "No Service principal(s) found without owner(s)" -ForegroundColor $([Constants]::MessageType.Update)
+             Write-Host "No application(s) found with privileged roles without owner(s) having access on subscriptions" -ForegroundColor $([Constants]::MessageType.Update)
         }
 
         #*******Step 4****** Check for inactive identities 
@@ -178,7 +178,7 @@ function Get-AzSKLSASScanStatus
         # Get workspace id from Security Center
         Write-Host $([Constants]::SingleDashLine)
 
-        Write-Host "Users and service principal(s) with no control plane activity on subscription in last 90 days:" -ForegroundColor $([Constants]::MessageType.Info)
+        Write-Host "Users and application(s) with no control plane activity on subscription in last 90 days:" -ForegroundColor $([Constants]::MessageType.Info)
 
         
         $workspaceAPI = "https://management.azure.com/subscriptions/$($SubscriptionId)/providers/Microsoft.Security/workspaceSettings/default?api-version=2017-08-01-preview"
@@ -253,7 +253,7 @@ function Get-AzSKLSASScanStatus
                      }
                      else
                         {
-                                Write-Host "No inactive users and service principal(s) found" -ForegroundColor $([Constants]::MessageType.Update)
+                                Write-Host "No inactive users and application(s) found" -ForegroundColor $([Constants]::MessageType.Update)
                         }
                 }
                 else
