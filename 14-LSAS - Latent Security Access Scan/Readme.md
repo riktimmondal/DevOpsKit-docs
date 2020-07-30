@@ -52,7 +52,7 @@ Install-Module -Name AzureAD -AllowClobber -Scope CurrentUser
 
 **5.** Reader access on scanning subscription
 
-**6.** Download LSAS scan script from [here](./LSAS.ps1) to your local machine.  will help to unblock files. 
+**6.** Download LSAS scan script from [here](./Scripts/LSAS.ps1) to your local machine.  will help to unblock files. 
 
 [Back to top…](Readme.md#contents)
 
