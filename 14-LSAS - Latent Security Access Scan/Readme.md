@@ -21,6 +21,8 @@ In this project, we will create a tool to warn the corresponding asset owners (e
 ## Using Latent Security Access Scan - Step by Step
 In this section, we will walk through the steps of Latent Security Access Scan
 
+> **Note:** Currently LSAS scan is only supported for Azure subscriptions. Other type of assets will be added soon. 
+
 To get started, we need the following prerequisites:
 
 
@@ -75,7 +77,7 @@ Set-AzContext -SubscriptionId <SubscriptionId>
 
 ``` PowerShell
 
-# Step 1: Point current path to extracted folder location and load setup script from deploy folder 
+# Step 1: Load download LSAS script
 
 . "<ScriptFolderPath>\LSAS.ps1"
 
