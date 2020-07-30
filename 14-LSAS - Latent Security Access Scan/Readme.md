@@ -40,7 +40,7 @@ To get started, we need the following prerequisites:
 
    ![PowerShell Version](../Images/00_PS_Version.PNG)   
 
-**3.** Install Az and Managed Service Identity Powershell Module using below command. For more details of Az installation refer [link](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
+**3.** Install Az and AzureAD modules. For more details of Az installation refer [link](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
 
 ``` Powershell
 # Install Az Modules
@@ -56,9 +56,9 @@ Install-Module -Name AzureAD -AllowClobber -Scope CurrentUser
 
 [Back to top…](Readme.md#contents)
 
-**Step-1: Setup** 
+**Scan:** 
 
-1. Open the PowerShell ISE and login to your Azure account (using **Connect-AzAccount**) and Set the context to subscription where solution needs to be installed.
+1. Open the PowerShell ISE and login to your Azure account, AD account  and Set the context to subscription where solution needs to be installed.
 
 ``` PowerShell
 # Login to Azure 
@@ -71,7 +71,7 @@ Connect-AzureAD
 Set-AzContext -SubscriptionId <SubscriptionId>
 ```
 
-2. Run installation command with required parameters given. 
+2. Run scan command with required parameters given. 
 
 ``` PowerShell
 
